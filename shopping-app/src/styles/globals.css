@@ -6,12 +6,15 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --text: black;
+  --textgray: rgba(0, 0, 0, 0.585);
+  --red: rgb(249, 106, 106);
   --bg: linear-gradient(
     30deg,
     rgb(197, 227, 255),
     rgb(215, 242, 255),
     rgb(255, 255, 255)
   );
+  --lightgray: rgb(236, 236, 236);
 }
 
 h1 {
