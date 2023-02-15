@@ -1,0 +1,47 @@
+.container {
+  padding: 40px 30px;
+  max-width: 1327px;
+  width: 100%;
+  margin: 0 auto;
+}
+.itemContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+}
+.item {
+  min-height: 40vh;
+}
+.txt {
+  padding: 10px 0px;
+}
+.txt h5 {
+  font-size: 15px;
+  font-weight: 700;
+}
+.txt h4 {
+  font-size: 19px;
+  color: rgb(87, 87, 250);
+}
+.imgContainer {
+  width: 100%;
+  height: 30vh;
+}
+
+@media (max-width: 1047px) {
+  .itemContainer {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media (max-width: 860px) {
+  .itemContainer {
+    grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 520px) {
+  .itemContainer {
+    grid-template-columns: auto;
+  }
+}
