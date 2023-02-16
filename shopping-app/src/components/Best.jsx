@@ -8,7 +8,7 @@ export default function Best() {
         <h1>Best Sellers</h1>
         <div className={style.itemContainer}>
           {bestData.map((data, idx) => (
-            <div className={style.item}>
+            <div className={style.item} key={idx}>
               <div
                 className={style.imgContainer}
                 style={{
