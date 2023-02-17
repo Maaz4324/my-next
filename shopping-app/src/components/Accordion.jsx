@@ -5,7 +5,7 @@ export default function Accordion({ title, content }) {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <>
+    <div>
       <div className={style.accordion}>
         <div className={style.accordionItem}>
           <div
@@ -30,6 +30,6 @@ export default function Accordion({ title, content }) {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

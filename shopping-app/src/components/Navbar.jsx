@@ -31,7 +31,7 @@ export default function NavbarContainer() {
                     </a>
                   </li>
                   <li>
-                    <a href="/">
+                    <a href="/shop">
                       <h5>Shop</h5>
                     </a>
                   </li>
