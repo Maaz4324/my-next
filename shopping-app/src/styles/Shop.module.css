@@ -1,0 +1,33 @@
+.container {
+  padding-top: 150px;
+  width: 100%;
+  max-width: 947px;
+  margin: 0 auto;
+}
+
+.head {
+  width: 100%;
+  min-height: 70vh;
+  background: url("/images/show.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.itemContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+}
+.item {
+  background: var(--lightgray);
+  padding: 30px;
+}
+.item img {
+  width: 100%;
+}
