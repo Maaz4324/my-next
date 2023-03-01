@@ -1,5 +1,51 @@
 .container {
-  border: 2px solid red;
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 150px;
+}
+.wrapper {
+  width: 96%;
+  max-width: 1247px;
+  margin: 0 auto;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+@media (max-width: 945px) {
+  .wrapper {
+    grid-template-columns: auto;
+  }
+}
+.left iframe {
+  width: 100%;
+  min-height: 80vh;
+}
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lightgray);
+}
+.mediaContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+}
+.mediaLink {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-bottom: 20px;
+}
+.mediaLink a svg {
+  width: 60px;
+  fill: black;
+}
+.mediaLink a svg:hover {
+  fill: rgb(61, 119, 133);
+}
+.email h4 {
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 700;
 }
