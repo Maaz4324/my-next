@@ -2,6 +2,8 @@ import "@/styles/globals.css";
 import Script from "next/script";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
+import Faq from "@/components/FAQ";
+import Footer from "@/components/Footer";
 
 export default function App({ Component }) {
   return (
@@ -24,6 +26,8 @@ export default function App({ Component }) {
       <>
         <Navbar />
         <Component />
+        <Faq />
+        <Footer />
       </>
     </>
   );

@@ -21,13 +21,39 @@
 
 .itemContainer {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 32.5% 32.5% 32.5%;
   grid-gap: 10px;
 }
 .item {
   background: var(--lightgray);
   padding: 30px;
 }
+.item:hover {
+  transition: all 0.8s;
+  background: rgb(139, 182, 224);
+  cursor: pointer;
+}
+.item:hover .imgContainer {
+  transition: all 0.8s;
+  display: none;
+}
 .item img {
   width: 100%;
+}
+.txt {
+  display: none;
+}
+.item:hover .txt {
+  transition: all 0.8s;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.txt h5 {
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  word-wrap: break-word;
 }

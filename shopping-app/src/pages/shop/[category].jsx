@@ -38,9 +38,12 @@ export default function category() {
         <div className={style.itemContainer}>
           {pageData.map((data, idx) => (
             <div key={idx} className={style.item}>
-              <img src={data.img} alt={data.name} />
-              {/* <h4>{data.name}</h4>
-            <h3>{data.price}</h3> */}
+              <div className={style.imgContainer}>
+                <img src={data.img} alt={data.name} />
+              </div>
+              <div className={style.txt}>
+                <h5>{data.name}</h5>
+              </div>
             </div>
           ))}
         </div>

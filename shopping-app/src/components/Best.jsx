@@ -9,18 +9,11 @@ export default function Best() {
         <div className={style.itemContainer}>
           {bestData.map((data, idx) => (
             <div className={style.item} key={idx}>
-              <div
-                className={style.imgContainer}
-                style={{
-                  background: `url(${data.img})`,
-                  backgroundPosition: "center",
-                  backgroundRepeat: "noRepeat",
-                  backgroundSize: "cover",
-                }}
-              ></div>
+              <div className={style.imgContainer}>
+                <img src={data.img} alt={data.name} />
+              </div>
               <div className={style.txt}>
                 <h5>{data.name}</h5>
-                <h4>{data.price}</h4>
               </div>
             </div>
           ))}

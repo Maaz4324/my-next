@@ -3,8 +3,6 @@ import styles from "@/styles/Home.module.css";
 import HeroSec from "@/components/HeroSec";
 import Category from "@/components/Category";
 import Best from "@/components/Best";
-import Faq from "@/components/FAQ";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -19,8 +17,6 @@ export default function Home() {
         <HeroSec />
         <Category />
         <Best />
-        <Faq />
-        <Footer />
       </div>
     </>
   );
