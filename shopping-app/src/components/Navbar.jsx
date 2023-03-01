@@ -8,7 +8,7 @@ export default function NavbarContainer() {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      router.push(`/shop/${searchInput}`);
+      router.push(`/shop/${searchInput.toLowerCase()}`);
     }
   };
 

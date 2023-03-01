@@ -28,8 +28,8 @@
 .item {
   background: var(--lightgray);
   padding: 30px;
-  min-height: 43vh;
 }
+
 .item:hover {
   transition: all 0.8s;
   background: rgb(139, 182, 224);
@@ -39,7 +39,7 @@
   transition: all 0.8s;
   display: none;
 }
-.item img {
+.imgContainer img {
   width: 100%;
 }
 .txt {
@@ -47,7 +47,6 @@
 }
 .item:hover .txt {
   transition: all 0.8s;
-  display: block;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,6 +59,19 @@
   word-wrap: break-word;
 }
 
+@media (max-width: 554px) {
+  .item {
+    padding: 10px;
+    min-height: 27vh;
+  }
+  .txt h5 {
+    font-size: 16px;
+    height: 100%;
+  }
+  .txt {
+    padding-top: 60px;
+  }
+}
 @media (max-width: 700px) {
   .container {
     padding-top: 180px;
