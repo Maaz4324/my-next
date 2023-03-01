@@ -7,7 +7,7 @@
 .itemContainer {
   width: 100%;
   display: grid;
-  grid-template-columns: 24% 24% 24% 24%;
+  grid-template-columns: 24.3% 24.3% 24.3% 24.3%;
   grid-gap: 10px;
 }
 .imgContainer img {
@@ -16,12 +16,11 @@
   padding: 20px;
 }
 .item {
-  min-height: 40vh;
   cursor: pointer;
 }
 .item:hover {
   transition: all 0.8s;
-  background: var(--bg);
+  background: rgb(139, 182, 224);
 }
 .item:hover .imgContainer {
   transition: all 0.8s;
@@ -51,17 +50,22 @@
 
 @media (max-width: 1047px) {
   .itemContainer {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 860px) {
   .itemContainer {
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(3, 1fr);
+    padding-right: 10px;
   }
 }
 @media (max-width: 520px) {
   .itemContainer {
-    grid-template-columns: auto;
+    grid-template-columns: 50% 50%;
+    padding-right: 10px;
+  }
+  .container h1 {
+    font-size: 50px;
   }
 }

@@ -125,6 +125,9 @@
     font-size: 36px;
     margin-left: 50px;
   }
+  .sidebar ul li {
+    list-style: none;
+  }
 
   .openbtn {
     font-size: 25px;

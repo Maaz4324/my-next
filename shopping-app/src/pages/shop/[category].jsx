@@ -9,9 +9,54 @@ import { useState, useEffect } from "react";
 
 export default function category() {
   const router = useRouter();
+  const [pageName, setPageName] = useState(router.query.category);
   const pageNumber = router.query.category;
+  const dataArray = [
+    teracottaData,
+    essentialData,
+    frameData,
+    showData,
+    clockData,
+  ];
 
-  const [pageData, setPageData] = useState(frameData);
+  useEffect(() => {
+    if (pageName == undefined) {
+      setPageName("");
+    } else {
+      setPageName(pageNumber.charAt(0).toUpperCase() + pageNumber.slice(1));
+    }
+  }, [router.query.category]);
+
+  const [pageData, setPageData] = useState([]);
+
+  useEffect(() => {
+    if (pageNumber == "teracotta") {
+      setPageData(teracottaData);
+    }
+    if (pageNumber == "show-pieces") {
+      setPageData(showData);
+    }
+    if (pageNumber == "frames") {
+      setPageData(frameData);
+    }
+    if (pageNumber == "essentials") {
+      setPageData(essentialData);
+    }
+    if (pageNumber == "wall-clock") {
+      setPageData(clockData);
+    }
+    let elemNo = 0;
+    for (let i = 0; i < dataArray.length; i++) {
+      const element = dataArray[i].filter((data) => data.keyword == pageNumber);
+      if (element.length != 0) {
+        setPageData(element);
+        elemNo++;
+      }
+    }
+    if (elemNo == 0) {
+      setPageData([]);
+    }
+  }, [router.query.category]);
 
   useEffect(() => {
     if (pageNumber == "teracotta") {
@@ -30,10 +75,11 @@ export default function category() {
       setPageData(clockData);
     }
   }, [router.query.category]);
+
   return (
     <div>
       <div className={style.container}>
-        <h3>{pageNumber}</h3>
+        <h3>{pageName}</h3>
         <hr />
         <div className={style.itemContainer}>
           {pageData.map((data, idx) => (

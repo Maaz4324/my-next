@@ -1,6 +1,17 @@
 import navbar from "@/styles/Navbar.module.css";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function NavbarContainer() {
+  const router = useRouter();
+  const [searchInput, setSearchInput] = useState();
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      router.push(`/shop/${searchInput}`);
+    }
+  };
+
   function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     // document.getElementById("main").style.marginLeft = "0";
@@ -17,7 +28,7 @@ export default function NavbarContainer() {
         <div className={navbar.nav}>
           <div className={navbar.logo}>
             <div className={navbar.imgContainer}>
-              <img src="/logo.jpeg" alt="" />
+              <img src="/logo.jpeg" alt="Sri venkateshwara trading logo" />
             </div>
             <h2>SVT</h2>
           </div>
@@ -31,18 +42,23 @@ export default function NavbarContainer() {
                     </a>
                   </li>
                   <li>
-                    <a href="/shop">
-                      <h5>Shop</h5>
+                    <a href="/shop/teracotta">
+                      <h5>Teracotta</h5>
                     </a>
                   </li>
                   <li>
-                    <a href="/">
+                    <a href="/shop/frames">
+                      <h5>Frames</h5>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/shop/wall-clock">
+                      <h5>Clock</h5>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/contact">
                       <h5>Contact</h5>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/">
-                      <h5>About</h5>
                     </a>
                   </li>
                 </ul>
@@ -56,10 +72,33 @@ export default function NavbarContainer() {
                   >
                     ×
                   </a>
-                  <a href="#">About</a>
-                  <a href="#">Services</a>
-                  <a href="#">Clients</a>
-                  <a href="#">Contact</a>
+                  <ul>
+                    <li>
+                      <a href="/">
+                        <h5>Home</h5>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/shop/teracotta">
+                        <h5>Teracotta</h5>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/shop/frames">
+                        <h5>Frames</h5>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/shop/wall-clock">
+                        <h5>Clock</h5>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/contact">
+                        <h5>Contact</h5>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
 
                 <div id="main">
@@ -71,10 +110,16 @@ export default function NavbarContainer() {
             </div>
             <div className={navbar.search}>
               <img src="/search.svg" alt="" />
-              <input type="text" placeholder="search here" />
+              <input
+                type="text"
+                placeholder="search here"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+              />
             </div>
             <div className={navbar.phone}>
-              <img src="/phone.svg" alt="" />
+              <img src="/phone.svg" alt="Sri venkateshwara trading shop" />
             </div>
           </div>
         </div>

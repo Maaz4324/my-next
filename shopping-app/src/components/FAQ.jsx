@@ -16,8 +16,10 @@ export default function Faq() {
           </p>
         </div>
         <div className={style.right}>
-          {faqData.map(({ title, content }) => (
-            <Accordion title={title} content={content} />
+          {faqData.map(({ title, content, idx }) => (
+            <div key={idx}>
+              <Accordion title={title} content={content} />
+            </div>
           ))}
         </div>
       </div>
